@@ -30,6 +30,7 @@ dependencies:
   flutter_svg: ^2.0.3
   smooth_page_indicator: ^1.0.1
   dio: ^5.0.2
+  dartz: ^0.10.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,15 +1,22 @@
-// onBoarding Model
-class PageObject {
+
+
+class Movie {
+  final int id;
   final String title;
-  final String subTitle;
   final String image;
+  final List<int> genderIds;
+  final String description;
+  final dynamic voteAverage;
+  final double releaseDate;
 
-  PageObject(this.title, this.subTitle, this.image);
-}
-class PageViewObject{
-  PageObject pageObject;
-  int numOfPages;
-  int currentIndex;
+ const Movie({
+    required this.id,
+    required this.title,
+    required this.image,
+    required this.genderIds,
+    required this.description,
+    required this.voteAverage,
+    required this.releaseDate,
+  });
 
-  PageViewObject(this.pageObject, this.numOfPages, this.currentIndex);
 }

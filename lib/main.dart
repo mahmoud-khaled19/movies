@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'movies/presentation/resources/routes_manager.dart';
-import 'movies/presentation/resources/theme_manager.dart';
+import 'app/resources/routes_manager.dart';
+import 'app/resources/theme_manager.dart';
+import 'movies/domain/models/models.dart';
 
 void main() {
   runApp(const MyApp());
