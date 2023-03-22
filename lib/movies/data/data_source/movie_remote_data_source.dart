@@ -3,7 +3,7 @@ import 'package:untitled1/app/errors/error_message_model.dart';
 import 'package:untitled1/app/errors/exceptions.dart';
 import 'package:untitled1/movies/data/models/movie_model.dart';
 
-import '../../../app/network_constance/network_constace.dart';
+import '../../../app/network_constance/network_constance.dart';
 
 abstract class BaseMovieRemoteDataSource {
   Future<List<MovieModel>> getPlayingNowMovies();
@@ -18,11 +18,14 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
   Future<List<MovieModel>> getPlayingNowMovies() async {
     final response = await Dio().get(NetworkConstance.moviesNowPlaying);
     if (response.statusCode == 200) {
-      return List<MovieModel>.from((response.data['results'] as List)
+      return List<MovieModel>.from((response.data['results'])
+          .toList()
           .map((e) => MovieModel.fromJson(e)));
+
     } else {
       throw ServerExceptions(
-          errorMessageModel: ErrorMessageModel.fromJson(response.data));
+        errorMessageModel: ErrorMessageModel.fromJson(response.data),
+      );
     }
   }
 
@@ -30,7 +33,8 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
   Future<List<MovieModel>> getPopularMovies() async {
     final response = await Dio().get(NetworkConstance.moviesPopular);
     if (response.statusCode == 200) {
-      return List<MovieModel>.from((response.data['results'] as List)
+      return List<MovieModel>.from((response.data['results'])
+          .toList()
           .map((e) => MovieModel.fromJson(e)));
     } else {
       throw ServerExceptions(
@@ -42,8 +46,8 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
   Future<List<MovieModel>> getTopRatedMovies() async {
     final response = await Dio().get(NetworkConstance.moviesTopRated);
     if (response.statusCode == 200) {
-      return List<MovieModel>.from((response.data['results'] as List)
-          .map((e) => MovieModel.fromJson(e)));
+      return List<MovieModel>.from(
+          response.data['results'].toList().map((e) => MovieModel.fromJson(e)));
     } else {
       throw ServerExceptions(
           errorMessageModel: ErrorMessageModel.fromJson(response.data));

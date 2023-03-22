@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   goNext() {
-    Navigator.pushReplacementNamed(context, RoutesManager.onBoardingScreen);
+    Navigator.pushReplacementNamed(context, RoutesManager.mainMovieScreen);
   }
 
   @override

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:untitled1/app/services/services_locator.dart';
 
 import 'app/resources/routes_manager.dart';
 import 'app/resources/theme_manager.dart';
-import 'movies/domain/models/models.dart';
 
 void main() {
+  ServicesLocator().init();
   runApp(const MyApp());
 }
 
@@ -21,4 +22,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-// test repooo

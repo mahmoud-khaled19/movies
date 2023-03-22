@@ -9,5 +9,8 @@ class AppStrings {
   static const String onBoardingSubTitle3 = 'on Boarding subTitle 3';
   static const String onBoardingSubTitle4 = 'on Boarding subTitle 4';
   static const String skip = 'skip';
-  static const String loginScreen = 'LoginScreen';
+  static const String nowPlaying = 'Now Playing';
+  static const String popular = 'Popular';
+  static const String topRated =  "Top Rated";
+  static const String seeMore = 'See More';
 }

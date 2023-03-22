@@ -44,7 +44,7 @@ ThemeData getApplicationTheme() {
         titleMedium: getMediumStyle(fontSize: FontSize.s14, color: ColorManager.darkGrey),
         bodyLarge: getRegularStyle(fontSize: FontSize.s18, color: ColorManager.grey1),
         headlineLarge: getSemiBoldStyle(fontSize: FontSize.s16, color: ColorManager.darkGrey,),
-        headlineMedium: getRegularStyle(fontSize: FontSize.s16, color: ColorManager.primaryColor,),
+        headlineMedium: getRegularStyle(fontSize: FontSize.s16, color: ColorManager.white,),
         bodySmall: getRegularStyle(fontSize: FontSize.s14, color: ColorManager.grey)),
     inputDecorationTheme: InputDecorationTheme(
         contentPadding: const EdgeInsets.all(AppSize.s8),

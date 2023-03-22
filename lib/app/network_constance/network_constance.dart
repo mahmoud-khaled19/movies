@@ -5,4 +5,7 @@ class NetworkConstance {
   static const String moviesNowPlaying = '$baseUrl/now_playing?$baseApi';
   static const String moviesTopRated = '$baseUrl/top_rated?$baseApi';
   static const String moviesPopular = '$baseUrl/popular?$baseApi';
+  static const String baseImageUrl = 'https://image.tmdb.org/t/p/w500/';
+
+  static String imageUrl(String path) => '$baseImageUrl$path';
 }

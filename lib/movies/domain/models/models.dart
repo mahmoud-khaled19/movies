@@ -1,5 +1,3 @@
-
-
 class Movie {
   final int id;
   final String title;
@@ -7,7 +5,7 @@ class Movie {
   final List<int> genderIds;
   final String description;
   final dynamic voteAverage;
-  final double releaseDate;
+  final String releaseDate;
 
  const Movie({
     required this.id,

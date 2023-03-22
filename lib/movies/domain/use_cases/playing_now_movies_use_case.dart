@@ -4,11 +4,11 @@ import 'package:untitled1/movies/domain/repository/base_movies_repository.dart';
 
 import '../../../app/errors/failure.dart';
 
-class PlayingNowMovies {
+class PlayingNowMoviesUseCase {
   BaseMoviesRepository baseMoviesRepository;
 
 
-  PlayingNowMovies(this.baseMoviesRepository);
+  PlayingNowMoviesUseCase(this.baseMoviesRepository);
 
   Future<Either<Failure,List<Movie>>>execute() async {
    return await baseMoviesRepository.playingNowMovies();
