@@ -8,6 +8,7 @@ import 'package:untitled1/movies/presentation/controller/movie_bloc.dart';
 import '../../../app/network_constance/enum.dart';
 import '../../../app/network_constance/network_constance.dart';
 import '../controller/movie_states.dart';
+import '../screens/movie_details_screen/movie_details_screen.dart';
 
 class TopRatedMoviesClass extends StatelessWidget {
   const TopRatedMoviesClass({Key? key}) : super(key: key);
@@ -39,7 +40,12 @@ class TopRatedMoviesClass extends StatelessWidget {
                       padding: const EdgeInsets.only(right: 8.0),
                       child: InkWell(
                         onTap: () {
-                          /// TODO : NAVIGATE TO  MOVIE DETAILS
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MovieDetailScreen(
+                                    id: movie.id,
+                                  )));
                         },
                         child: ClipRRect(
                           borderRadius:

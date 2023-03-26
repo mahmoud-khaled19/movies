@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:untitled1/app/base_use_cases/base_use_case.dart';
 import 'package:untitled1/movies/presentation/controller/movie_states.dart';
 import 'package:untitled1/movies/presentation/controller/movies_event.dart';
 
@@ -28,7 +29,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
 
   FutureOr<void> _getPlayingMovies(
       GetPlayingNowMoviesEvent event, Emitter<MoviesState> emit) async {
-    final result = await playingNowMovies.execute();
+    final result = await playingNowMovies(const NoParameter());
     result.fold(
         (left) => emit(state.copyWith(
               nowPlayingMoviesState: RequestState.error,
@@ -42,7 +43,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
 
   FutureOr<void> _getTopRatedMovies(
       GetTopRatedMoviesEvent event, Emitter<MoviesState> emit) async {
-    final result = await topRatedMoviesUseCase.execute();
+    final result = await topRatedMoviesUseCase(const NoParameter());
     result.fold(
         (left) => emit(state.copyWith(
               topRatedMoviesState: RequestState.error,
@@ -56,7 +57,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
 
   FutureOr<void> _getPopularMovies(
       GetPopularMoviesEvent event, Emitter<MoviesState> emit) async {
-    final result = await popularMoviesUseCase.execute();
+    final result = await popularMoviesUseCase(const NoParameter());
 
     result.fold(
         (left) => emit(state.copyWith(

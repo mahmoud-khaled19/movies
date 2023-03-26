@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:untitled1/app/resources/strings_manager.dart';
-import '../../movies/presentation/screens/movie_screen/movie_screen.dart';
-import '../../movies/presentation/screens/on_boarding_screen/on_boarding_screen.dart';
+ import '../../movies/presentation/screens/movie_screen/movie_screen.dart';
 import '../../movies/presentation/screens/splash/splash_screen.dart';
 
 class RoutesManager {
   static const String splashRoute = '/';
   static const String mainMovieScreen = '/mainMovieScreen';
-  static const String onBoardingScreen = '/onBoardingScreen';
 }
 
 class RouteGenerator {
@@ -18,8 +16,7 @@ class RouteGenerator {
 
       case RoutesManager.mainMovieScreen:
         return MaterialPageRoute(builder: (_) => const MainMoviesScreen());
-
-      // case RoutesManager.onBoardingScreen:
+            // case RoutesManager.onBoardingScreen:
       //   return MaterialPageRoute(builder: (_) => const OnBoardingScreen());
 
       default:

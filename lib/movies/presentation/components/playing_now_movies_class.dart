@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitled1/app/network_constance/enum.dart';
 import 'package:untitled1/movies/presentation/controller/movie_bloc.dart';
-
 import '../../../app/network_constance/network_constance.dart';
 import '../../../app/resources/strings_manager.dart';
 import '../controller/movie_states.dart';
+import '../screens/movie_details_screen/movie_details_screen.dart';
 
 class PlayingNowMoviesComponent extends StatelessWidget {
   const PlayingNowMoviesComponent({Key? key}) : super(key: key);
@@ -23,8 +23,7 @@ class PlayingNowMoviesComponent extends StatelessWidget {
       buildWhen: (previous, current) =>
           previous.nowPlayingMoviesState != current.nowPlayingMoviesState,
       builder: (BuildContext context, state) {
-        print('builde PlayingNowMoviesClass');
-        switch (state.nowPlayingMoviesState) {
+              switch (state.nowPlayingMoviesState) {
           case RequestState.loading:
             return const SizedBox(
                 height: 400, child: Center(child: CircularProgressIndicator()));
@@ -45,7 +44,13 @@ class PlayingNowMoviesComponent extends StatelessWidget {
                     return GestureDetector(
                       key: const Key('openMovieMinimalDetail'),
                       onTap: () {
-                        /// TODO : NAVIGATE TO MOVIE DETAILS
+                        print(item.id);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MovieDetailScreen(
+                                      id: item.id,
+                                    )));
                       },
                       child: Stack(
                         children: [
@@ -112,7 +117,7 @@ class PlayingNowMoviesComponent extends StatelessWidget {
             );
           case RequestState.error:
             return const SizedBox(
-              child:  Text('No Data !'),
+              child: Text('No Data !'),
             );
         }
       },

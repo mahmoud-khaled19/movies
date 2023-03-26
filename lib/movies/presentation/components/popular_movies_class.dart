@@ -8,9 +8,10 @@ import 'package:untitled1/movies/presentation/controller/movie_bloc.dart';
 import 'package:untitled1/movies/presentation/controller/movie_states.dart';
 
 import '../../../app/network_constance/network_constance.dart';
+import '../screens/movie_details_screen/movie_details_screen.dart';
 
-class PopularMoviesClass extends StatelessWidget {
-  const PopularMoviesClass({Key? key}) : super(key: key);
+class PopularMoviesComponent extends StatelessWidget {
+  const PopularMoviesComponent({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,12 @@ class PopularMoviesClass extends StatelessWidget {
                       padding: const EdgeInsets.only(right: 8.0),
                       child: InkWell(
                         onTap: () {
-                          /// TODO : NAVIGATE TO  MOVIE DETAILS
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MovieDetailScreen(
+                                    id: movie.id,
+                                  )));
                         },
                         child: ClipRRect(
                           borderRadius:

@@ -1,7 +1,6 @@
 import 'package:untitled1/app/network_constance/enum.dart';
 
-import '../../domain/models/models.dart';
-
+import '../../domain/entities/models.dart';
 class MoviesState {
   final List<Movie> nowPlayingMovies;
   final RequestState nowPlayingMoviesState;

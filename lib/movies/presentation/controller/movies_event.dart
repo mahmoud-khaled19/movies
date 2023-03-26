@@ -1,4 +1,4 @@
-class MoviesEvent {
+abstract class MoviesEvent {
   const MoviesEvent();
 }
 

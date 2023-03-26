@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled1/app/services/services_locator.dart';
 
+import 'app/resources/colors_manager.dart';
 import 'app/resources/routes_manager.dart';
 import 'app/resources/theme_manager.dart';
 
@@ -18,7 +19,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       onGenerateRoute: RouteGenerator.getRoute,
       initialRoute: RoutesManager.splashRoute,
-      theme: getApplicationTheme(),
+      
+      theme: getLightApplicationTheme().copyWith(
+        scaffoldBackgroundColor: ColorManager.darkGrey
+      ),
     );
   }
 }
