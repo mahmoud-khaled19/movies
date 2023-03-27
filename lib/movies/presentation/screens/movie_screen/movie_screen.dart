@@ -8,6 +8,7 @@ import '../../components/dvider.dart';
 import '../../components/playing_now_movies_class.dart';
 import '../../components/top_rated_movies_class.dart';
 import '../../controller/movie_bloc.dart';
+import '../settings_screen.dart';
 
 class MainMoviesScreen extends StatelessWidget {
   const MainMoviesScreen({Key? key}) : super(key: key);
@@ -19,11 +20,19 @@ class MainMoviesScreen extends StatelessWidget {
         ..add(GetPlayingNowMoviesEvent())
         ..add(GetTopRatedMoviesEvent())
         ..add(GetPopularMoviesEvent()),
-
       child: Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const SettingsScreen()));
+            },
+            icon: const Icon(
+              Icons.settings
+            ),
+          ),
+        ),
         body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
-          key: const Key('movie Scroll View'),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
@@ -46,4 +55,3 @@ class MainMoviesScreen extends StatelessWidget {
     );
   }
 }
-

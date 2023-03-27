@@ -12,7 +12,7 @@ class CacheHelper {
     return await _sharedPreferences?.setBool(key, value);
   }
 
-  static bool? getBoolDate({
+  static bool? getDate({
     required String key,
   }) {
     return _sharedPreferences?.getBool(key);
