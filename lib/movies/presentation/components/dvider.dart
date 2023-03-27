@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:untitled1/app/resources/values_manager.dart';
 
 import '../../../app/resources/colors_manager.dart';
 
@@ -15,27 +16,20 @@ class DividerClass extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle? style = Theme.of(context)
-        .textTheme
-        .headlineMedium
-        ?.copyWith(fontWeight: FontWeight.w700,);
+    TextStyle? style = Theme.of(context).textTheme.titleLarge;
     return Container(
       margin: const EdgeInsets.fromLTRB(
-        16.0,
-        24.0,
-        16.0,
-        8.0,
+        AppSize.s16,
+        AppSize.s20,
+        AppSize.s16,
+        AppSize.s8,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             title,
-            style: GoogleFonts.poppins(
-                fontSize: 19,
-                fontWeight: FontWeight.w500,
-                letterSpacing: 0.15,
-                color: ColorManager.white),
+            style:style,
           ),
           InkWell(
             onTap: () {
@@ -52,7 +46,7 @@ class DividerClass extends StatelessWidget {
                   Icon(
                     Icons.arrow_forward_ios,
                     size: 16.0,
-                    color: ColorManager.white,
+                    color: ColorManagerLight.white,
                   )
                 ],
               ),

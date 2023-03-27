@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:untitled1/app/resources/values_manager.dart';
 
 import '../../../../app/resources/assets_manager.dart';
-import '../../../../app/resources/colors_manager.dart';
 import '../../../../app/resources/constats.dart';
 import '../../../../app/resources/routes_manager.dart';
 
@@ -38,11 +38,13 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: ColorManager.primaryColor,
-      body: const Center(
+    return const Scaffold(
+      body:  Center(
         child: Image(
-          image: AssetImage(ImagesManager.splashLogoPath),
+          height: AppSize.s400,
+          width: 100,
+          image: AssetImage(ImagesManager.splashLogoPath,
+          ),
         ),
       ),
     );
