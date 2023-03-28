@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shimmer/shimmer.dart';
@@ -164,7 +165,7 @@ class MovieDetailContent extends StatelessWidget {
                     child: FadeInUp(
                       from: 20,
                       duration: const Duration(milliseconds: 500),
-                      child: Text(AppStrings.moreLikeThis.toUpperCase(),
+                      child: Text(AppStrings.moreLikeThis.toUpperCase().tr(),
                           style: Theme.of(context).textTheme.titleMedium),
                     ),
                   ),

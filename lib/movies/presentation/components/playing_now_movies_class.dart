@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitled1/app/network_constance/enum.dart';
@@ -94,7 +95,7 @@ class PlayingNowMoviesComponent extends StatelessWidget {
                                       ),
                                       const SizedBox(width: AppSize.s4),
                                       Text(
-                                        AppStrings.nowPlaying.toUpperCase(),
+                                        AppStrings.nowPlaying.toUpperCase().tr(),
                                         style: style,
                                       ),
                                     ],

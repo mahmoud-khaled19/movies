@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitled1/movies/presentation/components/popular_movies_class.dart';
@@ -35,19 +36,19 @@ class MainMoviesScreen extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              PlayingNowMoviesComponent(),
+            children:  [
+              const PlayingNowMoviesComponent(),
               DividerClass(
-                title: AppStrings.popular,
-                textSeeMore: AppStrings.seeMore,
+                title: AppStrings.popular.tr(),
+                textSeeMore: AppStrings.seeMore.tr(),
               ),
-              PopularMoviesComponent(),
+              const PopularMoviesComponent(),
               DividerClass(
-                title: AppStrings.topRated,
-                textSeeMore: AppStrings.seeMore,
+                title: AppStrings.topRated.tr(),
+                textSeeMore: AppStrings.seeMore.tr(),
               ),
-              TopRatedMoviesClass(),
-              SizedBox(height: 50.0),
+              const TopRatedMoviesClass(),
+              const SizedBox(height: 50.0),
             ],
           ),
         ),
