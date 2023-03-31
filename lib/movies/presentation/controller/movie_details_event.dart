@@ -10,7 +10,7 @@ class MovieSeeMoreDetails extends MovieDetailsEvent {
   const MovieSeeMoreDetails({required this.id});
 }
 
-class MovieRecommendationEvent extends MovieDetailsEvent {
+  class MovieRecommendationEvent extends MovieDetailsEvent {
   final int id;
 
   const MovieRecommendationEvent({required this.id});

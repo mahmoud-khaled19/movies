@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled1/app/resources/values_manager.dart';
 
 import '../../../app/resources/colors_manager.dart';
@@ -9,10 +8,12 @@ class DividerClass extends StatelessWidget {
     Key? key,
     required this.textSeeMore,
     required this.title,
+    required this.function,
   }) : super(key: key);
 
   final String title;
   final String textSeeMore;
+  final Function() function;
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +33,7 @@ class DividerClass extends StatelessWidget {
             style:style,
           ),
           InkWell(
-            onTap: () {
-              /// TODO : NAVIGATION TO POPULAR SCREEN
-            },
+            onTap: function,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(

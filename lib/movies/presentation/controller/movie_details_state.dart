@@ -26,6 +26,7 @@ class MovieDetailsState {
     String? movieRecommendationsMessage,
   }) {
     return MovieDetailsState(
+
       movieDetails: movieDetails ?? this.movieDetails,
       movieDetailsState: movieDetailsState ?? this.movieDetailsState,
       movieDetailsMessage: movieDetailsMessage ?? this.movieDetailsMessage,

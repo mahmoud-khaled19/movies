@@ -5,7 +5,6 @@ import 'package:untitled1/app/services/services_locator.dart';
 import 'package:untitled1/movies/presentation/controller/theme_mode_cubit.dart';
 import 'app/resources/routes_manager.dart';
 import 'app/resources/theme_manager.dart';
-import 'generated/codegen_loader.g.dart';
 import 'movies/presentation/components/shared_preferences.dart';
 import 'movies/presentation/controller/theme_mode_state.dart';
 
@@ -48,7 +47,7 @@ class MyApp extends StatelessWidget {
             title: 'Movies',
             debugShowCheckedModeBanner: false,
             onGenerateRoute: RouteGenerator.getRoute,
-            initialRoute: RoutesManager.splashRoute,
+            initialRoute: RoutesManager.mainMovieScreen,
             theme: cubit.isDark
                 ? getLightApplicationTheme()
                 : getDarkApplicationTheme(),
